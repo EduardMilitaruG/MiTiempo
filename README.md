@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# React Weather Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![OpenWeatherMap](https://img.shields.io/badge/OpenWeatherMap-API-orange?style=for-the-badge)
+
+A responsive weather dashboard built with React that displays current weather conditions and a 5-day forecast for any city worldwide. Fetches real-time data from the OpenWeatherMap API.
+
+## Features
+
+- **City Search** - Look up weather for any city globally
+- **Current Conditions** - Temperature, humidity, wind speed, and weather description
+- **5-Day Forecast** - Extended forecast with daily temperature ranges
+- **Weather Icons** - Visual representation of weather conditions
+- **Error Handling** - Graceful handling of invalid city names
+- **Loading States** - Visual feedback during API requests
+- **Responsive Design** - Works on desktop and mobile devices
+
+## Tech Stack
+
+- **React 19** - UI framework with hooks
+- **OpenWeatherMap API** - Weather data provider
+- **CSS3** - Custom styling with animations
+- **Create React App** - Project scaffolding
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/react-weather-dashboard.git
+cd react-weather-dashboard
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+```
+react-weather-dashboard/
+├── src/
+│   ├── components/
+│   │   ├── SearchBar.jsx      # City search input
+│   │   ├── WeatherCard.jsx    # Current weather display
+│   │   └── ForecastCard.jsx   # 5-day forecast display
+│   ├── App.js                 # Main application logic
+│   ├── App.css                # Application styles
+│   └── index.js               # Entry point
+└── package.json
+```
+
+## How It Works
+
+1. User enters a city name in the search bar
+2. App fetches current weather and forecast data concurrently using `Promise.all`
+3. Weather data is displayed with temperature, humidity, wind, and conditions
+4. 5-day forecast shows daily weather predictions
+5. Invalid cities display a user-friendly error message
+
+## API Integration
+
+The app uses two OpenWeatherMap endpoints:
+
+- **Current Weather**: `/weather` - Real-time weather conditions
+- **5-Day Forecast**: `/forecast` - 3-hour interval predictions
+
+```javascript
+const [weatherResponse, forecastResponse] = await Promise.all([
+  fetch(`api.openweathermap.org/data/2.5/weather?q=${city}`),
+  fetch(`api.openweathermap.org/data/2.5/forecast?q=${city}`)
+]);
+```
+
+## Skills Demonstrated
+
+- React functional components and hooks (useState)
+- Async/await with concurrent API requests (Promise.all)
+- Conditional rendering based on application state
+- Error handling and user feedback
+- Component-based architecture
+- CSS styling and responsive design
+- API integration and data transformation
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---------|-------------|
+| `npm start` | Run development server |
+| `npm test` | Launch test runner |
+| `npm run build` | Create production build |
 
-### `npm start`
+## Author
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Eduard Militaru**
+- GitHub: [@EduardMilitaruG](https://github.com/EduardMilitaruG)
+- LinkedIn: [Eduard Militaru](https://linkedin.com/in/eduardmilitaru)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## License
 
-### `npm test`
+MIT License - Free for personal and educational use.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Built as a portfolio project demonstrating React and API integration skills*
