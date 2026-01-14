@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MiTiempo/static/css/main.f981bbc0.css",
+    "main.js": "/MiTiempo/static/js/main.d54cfd46.js",
+    "static/js/453.30de29a8.chunk.js": "/MiTiempo/static/js/453.30de29a8.chunk.js",
+    "index.html": "/MiTiempo/index.html",
+    "main.f981bbc0.css.map": "/MiTiempo/static/css/main.f981bbc0.css.map",
+    "main.d54cfd46.js.map": "/MiTiempo/static/js/main.d54cfd46.js.map",
+    "453.30de29a8.chunk.js.map": "/MiTiempo/static/js/453.30de29a8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f981bbc0.css",
+    "static/js/main.d54cfd46.js"
+  ]
+}
